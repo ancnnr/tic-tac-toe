@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <title>Tic-Tac-Toe</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          <h2>Tic <span class="logo-big"> X </span> Tac <span class="logo-big"> O </span> Toe</h2>
+        </div>
+      </header>
+
+
+        
+    <main class="main container">
+        <button class="btn btn-add" type="button" id="toggle-form">+ New Game</button>
+        
+        <div class="game-grid" id="game-container">
+            <div class="game-box top-left-box" data-row="0" data-col="0">X</div>
+            <div class="game-box top-mid-box" data-row="0" data-col="1">O</div>
+            <div class="game-box top-right-box" data-row="0" data-col="2">O</div>
+            <div class="game-box mid-left-box" data-row="1" data-col="0">X</div>
+            <div class="game-box mid-mid-box" data-row="1" data-col="1">X</div>
+            <div class="game-box mid-right-box" data-row="1" data-col="2">O</div>
+            <div class="game-box bot-left-box" data-row="2" data-col="0">X</div>
+            <div class="game-box bot-mid-box" data-row="2" data-col="1">O</div>
+            <div class="game-box bot-right-box" data-row="2" data-col="2">O</div>
+        </div>
+    </main>
+
+    
+    <footer class="footer">
+        <p>Made by <strong>Adam Conner</strong></p>
+    </div>
+
+    <div class="modal" id="new-game-modal">
+        <form class="new-game-form" id="new-game-form">
+            <div class="form-item">
+                <input 
+                class="input" 
+                type="text" 
+                name="player1_name" 
+                id="player1_name"
+                placeholder="Player 1 Name">
+            </div>
+
+            <div class="form-item">
+                <input 
+                class="input" 
+                type="text" 
+                name="player2_name" 
+                id="player2_name" 
+                placeholder="Player 2 Name">
+            </div>
+
+            <button class="btn btn-light-green" type="submit">Start Game</button>
+        </form>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>
