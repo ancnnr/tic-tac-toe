@@ -86,7 +86,7 @@ const game = (() => {
 
     }
 
-    return { toggleActivePlayer, addPlayer, getActivePlayerName, getActivePlayerChar, getAllPlayers, playerTurn, resetCurrentGame, newGame };
+    return { addPlayer, getActivePlayerChar, playerTurn, resetCurrentGame, newGame };
 
 })();;
 
@@ -271,7 +271,6 @@ const uiFunctions = (() => {
     // DOM and UI Elements
 
     const toggleBtn = document.getElementById('toggle-form');
-    // const gameContainer = document.getElementById('game-container');
     const newGameModal = document.getElementById('new-game-modal');
     const newGameForm = document.getElementById('new-game-form');
     const overlay = document.getElementById('overlay');
@@ -364,7 +363,7 @@ const uiFunctions = (() => {
         e.preventDefault();
         game.newGame();
         clearGameDOM();
-        
+
         //grab player names from form
         const player1_name = document.getElementById('player1_name').value;
         const player2_name = document.getElementById('player2_name').value;
@@ -425,7 +424,7 @@ const uiFunctions = (() => {
 
 
 
-    return { setEventListeners, startGame, placeValue, showGameOverModal };
+    return { setEventListeners, placeValue, showGameOverModal };
 
 })();
 
