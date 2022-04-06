@@ -35,12 +35,18 @@ const game = (() => {
         //returns -1 for no win or tie, 0 for tie game, 1 for player 1, 2 for player 2
     }
 
-    const playerTurn = (r,c) => {
+    const playerTurn = (e) => {
         //performs player turn logic for playerId. Returns false if unsuccessful, returns true and switches active player if successful
-       
+        const r = e.target.getAttribute('data-row');
+        const c = e.target.getAttribute('data-col');
+        console.log("row: " + r)
+        console.log("col: " + c)
+
        if(gameBoard.isEmpty(r, c))
         {
-            //do the turn
+            gameBoard.playToken(r, c, getActivePlayerChar());
+            //check win
+            toggleActivePlayer();
         }
 
         else 
@@ -58,19 +64,24 @@ const gameBoard = (() => {
 
     const gameArray = [['','',''],['','',''],['','',''],];
 
-    const playX = (r,c) => {
-        //places X at [r][c]
-    }
-
-    const playO = (r,c) => {
-        //places o at [r][c]
+    const playToken = (r,c, token) => {
+        //places active token at [r][c]
+        gameArray[r][c] = token;
     }
 
     const isEmpty = (r,c) => {
         //checks collision at [r][c] and returns true if empty, false if not
+        if(gameArray[r][c] == '')
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
     }
 
-    return { playX, playO, isEmpty };
+    return { playToken, isEmpty };
 
 })();
 
@@ -99,6 +110,7 @@ const uiFunctions = (() => {
     const newGameModal = document.getElementById('new-game-modal');
     const newGameForm = document.getElementById('new-game-form');
     const overlay = document.getElementById('overlay');
+    const gameBoxes = document.querySelectorAll('.game-box');
 
 
     const setEventListeners = () => {
@@ -106,6 +118,11 @@ const uiFunctions = (() => {
         toggleBtn.onclick = showModal;
         overlay.onclick = hideModal;
         newGameForm.onsubmit = startGame;
+
+        gameBoxes.forEach((gb) => {
+            gb.onclick = game.playerTurn;
+        })
+
     }
 
     const showModal = () => {
@@ -137,7 +154,7 @@ const uiFunctions = (() => {
 
 
     const placeValue = (e) => {
-        
+
     }
 
 

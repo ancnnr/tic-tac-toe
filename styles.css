@@ -78,7 +78,7 @@ textarea {
     transition: filter 0.15s ease-in-out;
   }
   
-  .btn:hover {
+  .btn:hover, .game-box:hover {
     filter: brightness(90%);
   }
   
@@ -127,6 +127,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, min(20vw, 400px)));
     grid-template-rows: repeat(3, minmax(100px, min(20vw, 400px)));
+    border-radius: var(--border-radius);
     /* gap: var(--spacing-xl); */
     margin-top: var(--spacing-xl);
   }
@@ -142,17 +143,17 @@ textarea {
   }
 
   .top-mid-box, .bot-mid-box {
-    border-right: 2px solid var(--black);
-    border-left: 2px solid var(--black);
+    border-right: 4px solid var(--black);
+    border-left: 4px solid var(--black);
   }
 
   .mid-left-box, .mid-right-box {
-    border-top: 2px solid var(--black);
-    border-bottom: 2px solid var(--black);
+    border-top: 4px solid var(--black);
+    border-bottom: 4px solid var(--black);
   }
   
   .mid-mid-box {
-    border: 2px solid var(--black);
+    border: 4px solid var(--black);
   }
   
 
