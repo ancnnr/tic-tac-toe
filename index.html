@@ -24,15 +24,26 @@
         <button class="btn btn-add" type="button" id="toggle-form">+ New Game</button>
         
         <div class="game-grid" id="game-container">
-            <div class="game-box top-left-box" data-row="0" data-col="0">X</div>
+            <div class="game-box top-left-box" data-row="0" data-col="0"></div>
             <div class="game-box top-mid-box" data-row="0" data-col="1"></div>
             <div class="game-box top-right-box" data-row="0" data-col="2"></div>
-            <div class="game-box mid-left-box" data-row="1" data-col="0">X</div>
+            <div class="game-box mid-left-box" data-row="1" data-col="0"></div>
             <div class="game-box mid-mid-box" data-row="1" data-col="1"></div>
-            <div class="game-box mid-right-box" data-row="1" data-col="2">O</div>
+            <div class="game-box mid-right-box" data-row="1" data-col="2"></div>
             <div class="game-box bot-left-box" data-row="2" data-col="0"></div>
-            <div class="game-box bot-mid-box" data-row="2" data-col="1">O</div>
-            <div class="game-box bot-right-box" data-row="2" data-col="2">O</div>
+            <div class="game-box bot-mid-box" data-row="2" data-col="1"></div>
+            <div class="game-box bot-right-box" data-row="2" data-col="2"></div>
+        </div>
+
+        <div class="game-info">
+            <div class="player-info" id="player1">
+                <h2 id="player-info-p1-header"></h2>
+                <p id="player-info-p1-name"></p>
+            </div>
+            <div class="player-info" id="player2">
+                <h2 id="player-info-p2-header"></h2>
+                <p id="player-info-p2-name"></p>
+            </div>
         </div>
     </main>
 
@@ -63,6 +74,12 @@
 
             <button class="btn btn-light-green" type="submit">Start Game</button>
         </form>
+    </div>
+
+    <div class="modal" id="game-over-modal">
+        <div class="game-results" id="game-results"></div>
+        <button class="btn btn-light-green" id="replay-btn">Replay</button>
+        <button class="btn btn-add" id="new-game-btn">New Game</button>
     </div>
 
     <div class="overlay" id="overlay"></div>

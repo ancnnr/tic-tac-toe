@@ -81,6 +81,10 @@ textarea {
   .btn:hover, .game-box:hover {
     filter: brightness(90%);
   }
+
+  .game-box.inactive:hover {
+    filter: brightness(100%);
+  }
   
   .btn-add {
     font-size: 24px;
@@ -139,7 +143,11 @@ textarea {
       padding: var(--spacing-lg);
       font-size: clamp(12px, 15vw, 8rem);
       background-color: var(--grey);
-      height: minmax(100px, )
+      cursor: pointer;
+  }
+
+  .game-box.inactive {
+      cursor: default;
   }
 
   .top-mid-box, .bot-mid-box {
@@ -156,6 +164,25 @@ textarea {
     border: 4px solid var(--black);
   }
   
+  .game-info {
+      margin-top: 10%;
+      width: 100%;;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+
+  .player-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .player-info p {
+      padding-left: var(--spacing-md);
+  }
+
+
 
   /* .card {
     display: flex;
