@@ -19,16 +19,8 @@ const game = (() => {
         players.push(player);
     }
 
-    const getActivePlayerName = () => {
-        return players[playerIndex].getPlayerName();
-    }
-
     const getActivePlayerChar = () => {
         return players[playerIndex].getPlayerChar();
-    }
-
-    const getAllPlayers = () => {
-        return players;
     }
 
     const gameOverTie = () => {
@@ -294,10 +286,6 @@ const uiFunctions = (() => {
         newGameButton.onclick = startNewGame;
 
         setNoGameListeners();
-    }
-
-    const noGameYet = () => {
-        alert("Create a new game first");
     }
 
     const setActiveGameListeners = () => {
