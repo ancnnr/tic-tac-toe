@@ -275,6 +275,8 @@ const uiFunctions = (() => {
     const player1Header = document.getElementById('player-info-p1-header');
     const player2Name = document.getElementById('player-info-p2-name');
     const player2Header = document.getElementById('player-info-p2-header');
+    const player1InfoContainer = document.getElementById('player1');
+    const player2InfoContainer = document.getElementById('player2');
 
 
     const setEventListeners = () => {
@@ -368,6 +370,7 @@ const uiFunctions = (() => {
 
         //set up listeners and start game
         setActiveGameListeners();
+        player1InfoContainer.classList.add('active');
         hideNewGameModal();
     }
 
@@ -391,17 +394,35 @@ const uiFunctions = (() => {
         })
 
         removeAllChildNodes(gameResults);
+        player1InfoContainer.classList.remove('active');
+        player2InfoContainer.classList.remove('active');
 
     }
 
     const replayGame = () => {
         game.resetCurrentGame();
         clearGameDOM();
+        player1InfoContainer.classList.add('active');
         hideGameOverModal();
     }
 
     const placeValue = (e, token) => {
         e.target.textContent = token;
+        swapActivePlayer(token);
+    }
+
+    const swapActivePlayer = (token) => {
+        if(token=='X')
+        {
+            player1InfoContainer.classList.remove('active');
+            player2InfoContainer.classList.add('active');
+        }
+
+        else {
+            player2InfoContainer.classList.remove('active');
+            player1InfoContainer.classList.add('active');
+        }
+
     }
 
     function removeAllChildNodes(parent) {

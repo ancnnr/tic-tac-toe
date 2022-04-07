@@ -129,8 +129,8 @@ textarea {
   
   .game-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, min(20vw, 400px)));
-    grid-template-rows: repeat(3, minmax(100px, min(20vw, 400px)));
+    grid-template-columns: repeat(3, minmax(100px, max(10vw, 200px)));
+    grid-template-rows: repeat(3, minmax(100px, max(10vw, 200px)));
     border-radius: var(--border-radius);
     /* gap: var(--spacing-xl); */
     margin-top: var(--spacing-xl);
@@ -150,6 +150,10 @@ textarea {
       cursor: default;
   }
 
+  #player1.player-info.active, #player2.player-info.active {
+      background-color: var(--light-green);
+  }
+
   .top-mid-box, .bot-mid-box {
     border-right: 4px solid var(--black);
     border-left: 4px solid var(--black);
@@ -165,7 +169,7 @@ textarea {
   }
   
   .game-info {
-      margin-top: 10%;
+      margin-top: 20px;
       width: 100%;;
       display: flex;
       justify-content: space-evenly;
@@ -176,6 +180,9 @@ textarea {
       display: flex;
       justify-content: center;
       align-items: center;
+      
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius);
   }
 
   .player-info p {
